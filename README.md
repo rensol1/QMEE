@@ -6,4 +6,4 @@ Fuller et al. (2007) evaluated the benefits of urban public greenspaces in Sheff
 
 Reference
 
-Fuller, R. A., Irvine, K. N., Devine-Wright, P., Warren, P. H., & Gaston, K. J. (2007). Psychological benefits of greenspace increase with biodiversity. _Biology Letters_, _3_(390–394). http://doi.org/10.1098/rsbl.2007.0149.
+Fuller, R. A., Irvine, K. N., Devine-Wright, P., Warren, P. H., & Gaston, K. J. (2007). Psychological benefits of greenspace increase with biodiversity. _Biology Letters_, _3_,390–394. http://doi.org/10.1098/rsbl.2007.0149.
