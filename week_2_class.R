@@ -1,4 +1,4 @@
-#week 2 class notes 
+#week 2 class notes#
 
 # dir.create("data")
 download.file(url="https://ndownloader.figshare.com/files/2292169",
