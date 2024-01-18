@@ -24,5 +24,5 @@ bartlett.test(species.richness ~ animal, data = greenspace_data)
 
 # The test is significant (p = 0.019), suggesting that the groups have unequal variances 
 
-#why are you being mean
+
 
