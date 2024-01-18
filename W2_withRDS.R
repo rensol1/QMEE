@@ -1,6 +1,5 @@
 greenspace_data <- readRDS(file = "greenspaceTable.rds")
 
-
 ## Plots to check for errors ----
 ## Visually check normality assumption ----
 lm_green_space<- lm(species.richness ~ animal, data = greenspace_data)
