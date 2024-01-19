@@ -4,8 +4,8 @@ greenspace_data <- readRDS(file = "greenspaceTable.rds")
 ## Visualize data with a boxplot ----
 library(ggplot2)
 green_space_boxplot <- (ggplot(greenspace_data, 
-                               aes(x = animal, 
-                                   y = species.richness)) + 
+                          aes(x = animal, 
+                              y = species.richness)) + 
                           geom_boxplot()
 )
 print(green_space_boxplot)
