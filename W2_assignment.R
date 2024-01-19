@@ -12,9 +12,6 @@ green_space_long <- green_space_data %>%
 )
 
 ## Examine data ----
-print(green_space_long)
-str(green_space_long)
-
 greenspaceTable <- (green_space_long
                  %>% mutate(site=as.factor(site)) 
                  %>% mutate(animal=as.factor(animal))
