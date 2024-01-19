@@ -3,7 +3,7 @@ library(tidyverse)
 green_space_data <- read_csv("Green_Space_Biodiversity_Partial.csv")
 
 ## Examine structure and check for problems in the dataset ----
-str(green_space_data)
+# str(green_space_data)
 problems(green_space_data)
 # There aren't any obvious problems with the dataset, such as missing or incorrect information
 
@@ -17,8 +17,8 @@ green_space_long <- green_space_data %>%
 
 ## Examine data ----
 greenspaceTable <- (green_space_long
-                 %>% mutate(site=as.factor(site)) 
-                 %>% mutate(animal=as.factor(animal))
+                 %>% mutate(site=as.factor(site)
+                        , animal=as.factor(animal)) 
 )
 summary(greenspaceTable)
 # Summary table looks correct
