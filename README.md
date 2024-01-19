@@ -14,11 +14,15 @@ Fuller, R. A., Irvine, K. N., Devine-Wright, P., Warren, P. H., & Gaston, K. J. 
 
 The two scripts for this week's assignment are "W2_assignment.R" and "W2_withRDS.R". Both are found in the main branch of my QMEE repository. 
 
-"W2_assignment.R" uses tidyverse to import Fuller et al. (2007) data ("Green_Space_Biodiversity_Partial.csv", also found in the main branch) and checks for problems with the dataset. It then converts the dataset to long format, saving it as a new object (green_space_long). To examine the data, the script uses this new object and converts the character variables (site and animal) to factors, creating another new object (greenspaceTable), then summarizing it. The summary table looks correct. Then, to check whether the data are distributed normally, the script creates a linear model and uses it to graph the residuals of species richness given animal type. Visually, the data appears to be normal, but the script also performs a Shapiro-Wilk normality test to double check. Finally, the script saves the greenspaceTable as an RDS file. So, "W2_assignment.R" needs to be run first to obtain the file for the following script.
+"W2_assignment.R" uses tidyverse to import Fuller et al. (2007) data ("Green_Space_Biodiversity_Partial.csv", also found in the main branch) and checks for problems with the dataset. It then converts the dataset to long format, saving it as a new object (green_space_long). To examine the data, the script uses this new object and converts the character variables (site and animal) to factors, creating another new object (greenspaceTable), then summarizes it. The summary table looks correct (i.e. every site has 2 data points for bird and butterfly, and there are 15 bird and butterfly data points for sites A–O). Then, to check whether the data are distributed normally, the script creates a linear model and uses it to graph the residuals of species richness given animal type. Visually, the data appear to be normal, but the script also performs a Shapiro-Wilk normality test to double check. Finally, the script saves the greenspaceTable as an RDS file. So, "W2_assignment.R" needs to be run first to obtain the file for the following script.
 
 "W2_withRDS.R" reads the greenspaceTable RDS file. Using the ggplot2 library, it creates and prints a boxplot, with animal (i.e. butterfly vs bird) as the independent variable, and species richness as the dependent variable. Finally, it performs a Bartlett test of homogeneity of variances of species richness given animal type.
 
-These scripts only use a portion of the Fuller et al. (2007) data. 
+These scripts only use a portion of the Fuller et al. (2007) data. Specifically, they examine and compare the species richness of butterflies and birds across multiple greenspace sites. Butterfly and bird species richness can fluctuate as these animals can move. Fuller et al. (2007) also recorded species richness of static plant species in the greenspace areas. In the future, we could compare fluctuating and static species richness. 
+
+Furthermore, Fuller et al. (2007) recorded the size of the greenspace areas, which could be used to assess whether there is a correlation between area size and species richness (bird, butterfly, or plant).
+
+Finally, Fuller et al. (2007) surveyed urban city dwellers on their perceptions of species richness in the greenspace areas. Therefore, we could compare actual species richness to perceived species richness.
 
 Reference
 
