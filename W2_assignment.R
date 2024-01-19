@@ -2,8 +2,10 @@
 library(tidyverse)
 green_space_data <- read_csv("Green_Space_Biodiversity_Partial.csv")
 
-## Check for any obvious problems in the dataset ----
+## Examine structure and check for any obvious problems in the dataset ----
+str(green_space_data)
 problems(green_space_data)
+# There aren't any obvious problems with the dataset, such as missing or incorrect information
 
 ## Convert to long format ----
 green_space_long <- green_space_data %>% 
