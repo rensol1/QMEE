@@ -20,3 +20,5 @@ P(A|D) = (1)(0.01)/((1)(0.01) + (0.05)(0.99))
 P(A|D) = 0.168
 
 The probability they have MMV is 0.168 (16.8%).
+
+If I learn that a friend tests positive for MMV, I would tell them it is unlikely they actually have MMV. 
