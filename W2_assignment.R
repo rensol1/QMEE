@@ -34,5 +34,8 @@ qqnorm(residuals(lm_green_space),main=""); qqline(residuals(lm_green_space))
 shapiro.test(residuals(lm_green_space))
 # The test is non-significant (p = 0.337), so we can assume normality 
 
+## 🙂 This is a really good example of what you shouldn't do with a non-significant P value; if you have enough biological data, S-W will always be significant. Better to look at the residuals, or even the S-W statistic
+## Also: it's a little odd that you are testing normality without looking at the areas, which could well be important
+
 ## Save object as RDS file ----
 saveRDS(greenspaceTable, file = "greenspaceTable.rds")
