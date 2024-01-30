@@ -4,11 +4,11 @@ Possible events:
 A: Person has MMV
 B: Person doesn't have MMV
 
-Probability of events occuring:
+Probability of events occuring in the population:
 PA: 0.01
 PB: 0.99
 
-Event:
+Event occrured:
 D: The randomly selected person tests positive for MMV
 
 Likelihood of event occuring:
