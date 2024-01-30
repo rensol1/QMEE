@@ -6,6 +6,8 @@ library(ggplot2); theme_set(theme_bw(base_size=14))
 library(performance)
 library(patchwork)
 
+###This script uses the rds file created by "W2_withRDS.R" 
+
 #Read rds file to obtain data ----
 green_space_data <- readRDS(file = "greenspaceTable.rds")
 
@@ -42,10 +44,11 @@ print(species.line)
 #Stacking on top of each other: ----
 stacked <- species.hist/species.line 
 print(stacked)
-#Having different plots in close proximity makes it easier to compare them. This would be more useful if the two plots were the same type (e.g. two histograms, or two line plots)
+#Having close proximity of my plots makes it easier to compare them. This would be more useful if the two plots were the same type (e.g. two histograms, or two line plots), but I don't have more data to demonstrate this
 
 #Create linear model and check model assumptions 
 lm1 <- lm(species.richness ~ area.ha, green_space_data)
 check_model(lm1)
-
+#check_model() is a very useful function because it creates and displays multiple plots to examine the model assumptions (i.e. posterior predictive check, linearity, homogeneity of variance, influential observations, and normalty of residuals)
+#I find it very helpful that along with the names of the tests, it gives a brief explanation of what the graph should look like
 
