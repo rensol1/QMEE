@@ -1,7 +1,6 @@
 ## W3 Assignment
 
 #Libraries ----
-library(tidyverse)
 library(ggplot2); theme_set(theme_bw(base_size=14))
 library(performance)
 library(patchwork)
@@ -40,11 +39,11 @@ print(species.line)
 #It also adds simple features like points and connecting lines, which help display the data
 #Colour helps to distinguish between groups or categories. In this case, the orange points and lines display the bird data, and the blue points and lines display the butterlfy data
 
-#I can use the patchwork package to display the plots together
-#Stacking on top of each other: ----
-stacked <- species.hist/species.line 
-print(stacked)
-#Having close proximity of my plots makes it easier to compare them. This would be more useful if the two plots were the same type (e.g. two histograms, or two line plots), but I don't have more data to demonstrate this
+# #I can use the patchwork package to display the plots together
+# #Stacking on top of each other: ----
+# stacked <- species.hist/species.line 
+# print(stacked)
+# #Having close proximity of my plots makes it easier to compare them. This would be more useful if the two plots were the same type (e.g. two histograms, or two line plots), but I don't have more data to demonstrate this
 
 #Create linear model and check model assumptions 
 lm1 <- lm(species.richness ~ area.ha, green_space_data)
