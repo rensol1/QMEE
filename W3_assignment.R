@@ -51,4 +51,4 @@ lm1 <- lm(species.richness ~ area.ha, green_space_data)
 check_model(lm1)
 #check_model() is a very useful function because it creates and displays multiple plots to examine the model assumptions (i.e. posterior predictive check, linearity, homogeneity of variance, influential observations, and normalty of residuals)
 #I find it very helpful that along with the names of the tests, it gives a brief explanation of what the graph should look like
-
+#It seems my data may have some problems. For example, the model-predicted lines in the posterior predictive check don't quite fall along the observed line, the reference line for the homogeneity of variance deviates from being flat and horizontal, and the dots on the normality of residuals plot do not fall along the line 
