@@ -1,0 +1,22 @@
+#W4 Assignment MMV Question
+
+Possible events:
+A: Person has MMV
+B: Person doesn't have MMV
+
+Probability of events occuring:
+PA: 0.01
+PB: 0.99
+
+Event:
+D: The randomly selected person tests positive for MMV
+
+Likelihood of event occuring:
+P(D|A): 1
+P(D|B): 0.05
+
+Probability that person has MMV:
+P(A|D) = (1)(0.01)/((1)(0.01) + (0.05)(0.99))
+P(A|D) = 0.17
+
+The probability they have MMV is 0.17 (17%).
