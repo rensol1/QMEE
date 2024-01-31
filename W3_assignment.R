@@ -5,7 +5,7 @@ library(ggplot2); theme_set(theme_bw(base_size=14))
 library(performance)
 library(patchwork)
 
-###This script uses the rds file created by "W2_withRDS.R" 
+###This script uses the rds file created by "W2_assignment.R" 
 
 #Read rds file to obtain data ----
 green_space_data <- readRDS(file = "greenspaceTable.rds")
