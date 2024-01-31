@@ -41,11 +41,12 @@ print(species.line)
 
 #I can use the patchwork package to display the plots together
 #Display next to each other: ----
-hist.and.line <- species.hist | species.line 
+hist.and.line <- (species.hist | species.line)
 print(hist.and.line)
 #Having close proximity of my plots makes it easier to compare them. This could be more useful if the two plots were the same type (e.g. two histograms, or two line plots), but I don't have more data to demonstrate this
 
-#Create linear model and check model assumptions 
+#Create linear model and check model assumptions ----
+#This linear model looks at species richness given greenspace area
 lm1 <- lm(species.richness ~ area.ha, green_space_data)
 check_model(lm1)
 #check_model() is a very useful function because it creates and displays multiple plots to examine the model assumptions (i.e. posterior predictive check, linearity, homogeneity of variance, influential observations, and normalty of residuals)
