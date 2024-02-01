@@ -4,7 +4,7 @@ Bio 708
 
 **Assignment Week 1**
 
-Fuller et al. (2007) evaluated the benefits of urban public greenspaces in Sheffield, England. I have provided part of their dataset, including the greenspace areas (in hectares), as well as butterfly and bird species richness in these areas (Green_Space_Biodiversity_Partial.csv). From these data, we can ask whether there is some correlation between butterfly species richness and the size of greenspace areas or bird species richness and the size of greenspace areas. It could be that having larger greenspace areas allows for greater butterfly and bird species richness. We can also ask whether there is a difference in richness of butterfly species compared to bird species. Over the evaluated greenspace areas, there could be greater butterfly species richness than bird species richness, or vice versa. 
+Fuller et al. (2007) evaluated the benefits of urban public greenspaces in Sheffield, England. I have provided part of their dataset, including the greenspace areas (in hectares), as well as butterfly and bird species richness in these areas (`Green_Space_Biodiversity_Partial.csv`). From these data, we can ask whether there is some correlation between butterfly species richness and the size of greenspace areas or bird species richness and the size of greenspace areas. It could be that having larger greenspace areas allows for greater butterfly and bird species richness. We can also ask whether there is a difference in richness of butterfly species compared to bird species. Over the evaluated greenspace areas, there could be greater butterfly species richness than bird species richness, or vice versa. 
 
 Reference
 
