@@ -1,17 +1,17 @@
 #W4 Assignment MMV Question
 
-Possible events:
+Possible hypotheses:
 A: Person has MMV
 B: Person doesn't have MMV
 
-Probability of events occuring in the population:
+Probability of hypothese occuring in the population:
 PA: 0.01
 PB: 0.99
 
-Event occrured:
+Event occrured (i.e. data obtained):
 D: The randomly selected person tests positive for MMV
 
-Likelihood of event occuring:
+Likelihood of event occuring given the possible hypotheses:
 P(D|A): 1
 P(D|B): 0.05
 
