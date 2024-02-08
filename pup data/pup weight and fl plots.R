@@ -5,7 +5,7 @@ pup_fl<- read_csv("pup stats - forearm length.csv",  col_types=cols())
 #Convert pup weight data to long format                  
 pup_weights_long <- pup_weights %>% 
   pivot_longer(
-    cols = (-Pup_ID),
+    cols = (c(-Pup_ID, -Sex)),
     names_to = "Age",
     values_to = "Weight"
 )
@@ -14,16 +14,17 @@ pup_weights_long <- pup_weights %>%
 #Convert pup forearm length data to long format
 pup_fl_long <- pup_fl %>% 
   pivot_longer(
-    cols = (-Pup_ID),
+    cols = (c(-Pup_ID, -Sex)),
     names_to = "Age",
     values_to = "Forearm_Length"
 )
 #summary(pup_fl_long)
 
 #Merge datasets
-weight_fl <- (left_join(pup_weights_long, pup_fl_long, by= c("Pup_ID" = "Pup_ID", "Age" = "Age"))
-  %>% mutate (Age = factor(Age))
-  %>% mutate (Pup_ID = factor(Pup_ID))
+weight_fl <- (left_join(pup_weights_long, pup_fl_long, by= c("Pup_ID" = "Pup_ID", "Age" = "Age", "Sex" = "Sex"))
+    %>% mutate (Age = factor(Age)
+     , Pup_ID = factor(Pup_ID)
+     , Sex = factor(Sex))
 )
 #summary(weight_fl)
 
@@ -40,7 +41,8 @@ age_weight <- (ggplot(weight_fl, aes(x = factor(Age, level = c("2", "4", "6", "8
                + geom_point()
                + xlab("Age (Day)")
                + ylab("Weight (g)")
-)    
+)
+print(age_weight)
 ##Is there a better way to fix than this??
 
 age_weight + geom_line()
@@ -62,7 +64,7 @@ age_fl <- (ggplot(weight_fl, aes(x = factor(Age, level = c("2", "4", "6", "8", "
       + xlab("Age (Day)")
       + ylab("Forearm Length (mm)")
 )
-
+print(age_fl)
 
 age_fl + geom_line()
 #or
