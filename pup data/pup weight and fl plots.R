@@ -28,46 +28,25 @@ weight_fl <- (left_join(pup_weights_long, pup_fl_long, by= c("Pup_ID" = "Pup_ID"
 )
 #summary(weight_fl)
 
-#Weight as a factor of age
-# print(ggplot(weight_fl, aes(Age,  Weight, group = Pup_ID, colour = Pup_ID))
-#       + geom_point()
-#       + geom_line()
-#       + xlab("Age (Day)")
-#       + ylab("Weight (g)")
-# )
-##This organizes the x-axis by the first digit rather than the whole number
+#Order factors
+weight_fl$Age <- factor(weight_fl$Age,levels=c("2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36"))
+weight_fl$Sex <- factor(weight_fl$Sex, levels=c("female", "male"))
 
-age_weight <- (ggplot(weight_fl, aes(x = factor(Age, level = c("2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36")), Weight, group = Pup_ID, colour = Pup_ID))
+#plot weight across age 
+age_weight <- (ggplot(weight_fl, aes(Age, Weight, group = Pup_ID, colour = Pup_ID))
                + geom_point()
                + xlab("Age (Day)")
                + ylab("Weight (g)")
+               + geom_smooth()
 )
-print(age_weight)
-##Is there a better way to fix than this??
 
-age_weight + geom_line()
-#vs
-age_weight + geom_smooth()
-#When is geom_line more effective than geom_smooth & vice versa
-
-#Forearm length as a factor of age
-# print(ggplot(weight_fl, aes(Age, Forearm_Length, group = Pup_ID, colour = Pup_ID))
-#       + geom_point()
-#       + geom_line()
-#       + xlab("Age (Day)")
-#       + ylab("Forearm Length (mm)")
-# )
-#Same thing as weight plot
-
-age_fl <- (ggplot(weight_fl, aes(x = factor(Age, level = c("2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36")), Forearm_Length, group = Pup_ID, colour = Pup_ID))
+#Plot forearm length across age 
+age_fl <- (ggplot(weight_fl, aes(Age, Forearm_Length, group = Pup_ID, colour = Pup_ID))
       + geom_point()
       + xlab("Age (Day)")
       + ylab("Forearm Length (mm)")
+      + geom_smooth()
 )
-print(age_fl)
 
-age_fl + geom_line()
-#or
-age_fl + geom_smooth() #?
-#
-
+#Save RDS file
+saveRDS(weight_fl, file = "WeightsandForearmLengths.rds")
