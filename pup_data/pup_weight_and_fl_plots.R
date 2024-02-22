@@ -1,3 +1,5 @@
+## JD: Sorry, changed some of your filenames and then found out you've already fixed the things I was looking for.
+## It is good practice not to use spaces in filenames that involve scripts, since it makes piping harder.
 library(tidyverse)
 pup_weights <- read_csv("pup stats - weights.csv",  col_types=cols())
 pup_fl<- read_csv("pup stats - forearm length.csv",  col_types=cols())
@@ -41,7 +43,8 @@ age_weight <- (ggplot(weight_fl, aes(Age, Weight, group = Pup_ID, colour = Pup_I
 )
 
 #Plot forearm length across age 
-age_fl <- (ggplot(weight_fl, aes(Age, Forearm_Length, group = Pup_ID, colour = Pup_ID))
+## JD: Changed to print, since you're not using the object. 
+print(ggplot(weight_fl, aes(Age, Forearm_Length, group = Pup_ID, colour = Pup_ID))
       + geom_point()
       + xlab("Age (Day)")
       + ylab("Forearm Length (mm)")
