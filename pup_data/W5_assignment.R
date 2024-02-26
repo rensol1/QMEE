@@ -49,13 +49,16 @@ lmweight_interactionc <- update(lmweight_interaction, contrasts = list(Age = con
 print(summary(lmweight_interactionc))
 #Now when I print the summary table, it compares to the new intercept, not Age2, female.
 
+## JD: How do you interpret the change in the “Sex” coefficient. Why does it now say sex is “1” instead of male or female?
+
 #Print coefficient table
 dwplot(lmweight_interactionc, by_2sd=TRUE)
 #Now the interactions are also plotted 
 #Based on the summary and coefficient tables, there seems to be an interaction between Age and Sex at Age1, 2, 15, and 16 (originally Ages 2, 4, 32, and 34)
 #Though, the effects aren quite small
 
+## JD: Don't say the interaction seems to “exist” -- we always think it probably exists. The apparent significance here just means that you are confident (or almost confident) about the _sign_ of the interaction.
 
-
+## Grade 2/3
 
 
