@@ -101,8 +101,14 @@ Instead, I will rely on the historical precedent set by statisticians. So, I wou
 
 Like *Cohen's d*, *Hedge's g* estimates the magnitude of an effect. In this case, I would evaluate the magnitude of the effect of non-flight exercise (crawling) on flight ability. *Hedge's g* is better for small sample sizes than *Cohen's d*. For sample sizes less than 10 per group, *Cohen's d* creates a relatively large upward bias of effect size, and this bias is corrected in the *Hedge's g* calculation (Nakagawa & Cuthill, 2007). I know that I will have less than 10 bats per group because we don't have enough bats currently in captivity. 
 
+
+Nakagawa, S., & Cuthill, I. C. (2007). Effect size, confidence interval and statistical significance: a practical guide for biologists. *Biological Reviews, 82*, 591–605. doi:10.1111/j.1469-185X.2007.00027.x.
+
+
 **B.**
 I would scale by the weighted pooled standard deviation, which takes biological variation into account and is weighted using the sample sizes of each group to reduce the upward bias mentioned above (Taylor & Alanazi, 2023).
+
+Taylor, J. M., & Alanazi, S. (2023). Cohen's and Hedges' g. *Journal of Nursing Education, *62*(5), 316–317. https://doi.org/10.3928/01484834-20230415-02
 
 **C.**
 As mentioned, a benefit of using *Hedge's g* is that it accounts for the small sample size I will have and reduces the upward bias. 
@@ -116,14 +122,35 @@ A potential problem with calculating *Hedge's g*, which scales using weighted po
 
 Furthermore, a potential negative of *Hedge's g* is that there isn't a definitive answer for what constitutes small, medium, and large effects. Although there are guidelines (Cohen, 1992), we shouldn't interpret *Hedge's g* with such rigidity. 
 
+
+Cohen, J. (1992). A power primer. Psychological Bulletin, 112(1), 155–159. https://doi.org/10.1037/0033-2909.112.1.155.
+
 **D.**
-Again, I haven't seen research examining the same thing I am. However, I can rely on animal behaviour reported in bat studies conducted in laboratories. For some studies, the bats had to sustain flight for several minutes, such as in foraging experiments (Chiu et al., 2010; Wright et al., 2011). For others (e.g. obstacle avoidance, echolocation call recordings), it has been sufficient for bats to fly to the room's opposite wall (Sändig et al., 2014; Barchi et al., 2013).  
+Again, I haven't seen research examining the same thing I am. However, I can rely on animal behaviour reported in bat studies conducted in laboratories. For some studies, the bats had to sustain flight for several minutes, such as in foraging experiments (Chiu et al., 2010; Wright et al., 2011). For others (e.g. obstacle avoidance, echolocation call recordings), it has been sufficient for bats to fly to the room's opposite wall (Barchi et al., 2013; Sändig et al., 2014; Simmons et al., 2018).  
 
 
 I've seen newly caught big brown bats sustain flight for 10 minutes at a time. Realistically, I know I can't expect our bats to do this. As I mentioned, my own original study required the bats to complete a few laps of the room. Taking everything into account, I can create the following Figure:
 ![](BoMmFigure.jpeg)
 
 This displays my measure of effect (how long the bat sustains flight, in seconds). I haven't included negative numbers on the scale because there is no "negative flight". So, it begins at 0 seconds, which is not practical/meaningful because it means the bat did not fly. 5 to 10 seconds are in the grey area, because while the bat could likely reach the opposite wall in that time, it wouldn't really allow for studies involving navigation or foraging. Finally, 15 seconds and higher are in the practical/meaningful section. This would mean that the bat completes multiple laps around the room, and trials could involve more than just the bat landing on the opposite wall. 
+
+
+References
+
+
+Barchi, J. R., Knowles, J. M., & Simmons, J. A. (2013). Spatial memory and stereotypy of flight paths by big brown bats in cluttered surroundings. *The Journal of Experimental Biology, 216*, 1053–1063. doi:10.1242/jeb.073197.
+
+
+Chiu, C., Reddy, R. V., Xian, W., Krishnaprasad, P. S., & Moss, C. F. (2010). Effects of competitive prey capture on flight behavior and sonar beam pattern in paired big brown bats, Eptesicus fuscus. *The Journal of Experimental Biology, 213*, 3348–3356. doi:10.1242/jeb.044818.
+
+
+Sändig, S., Schnitzler, H-U., & Denzinger, A. (2014). Echolocation behaviour of the big brown bat (Eptesicus fuscus) in an obstacle avoidance task of increasing difficulty. *The Journal of Experimental Biology, 217*, 2876–2884. doi:10.1242/jeb.099614.
+
+
+Simmons A. M., Ertman, A., Hom, K. N., Simmons, J. A. (2018). Big brown bats (Eptesicus fuscus) successfully navigate through clutter after exposure to intense band-limited sound. *Scientific Reports, 8*(13555). doi:10.1038/s41598-018-31872-x.
+
+
+Wright, G. S., Wilkinson, G. S., & Moss, C. F. (2011). Social learning of a novel foraging task by big brown bats, Eptesicus fuscus. *Animal Behaviour, 82*, 1075–1083. doi:10.1016/j.anbehav.2011.07.044.
 
 **E.**
 
