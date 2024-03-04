@@ -1,9 +1,8 @@
 #W7 Assignment 
-library(MASS)
-library(tidyverse)
-library(emmeans)
 library(coefplot)
-install.packages("coefplot")
+library(DHARMa)
+library(tidyverse)
+library(MASS)
 #This RDS file is created by "W2_assignment.R" in my repo 
 greenspace_data <- readRDS(file = "greenspaceTable.rds")
 
