@@ -14,7 +14,8 @@ library(cowplot)
 library(tidyverse) 
 
 #This RDS file is created by "pup_weight_and_fl_plots.R" in the "pup_data" folder of my QMEE repo
-pup_weight_fl <- readRDS( file = "WeightsandForearmLengths.rds")
+## JD: Better to do this by putting the relative path in as below
+pup_weight_fl <- readRDS( file = "pup_data/WeightsandForearmLengths.rds")
 
 #Order ages & change to numeric
 pup_weight_fl$Age <- factor(pup_weight_fl$Age,levels=c("2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36"))
@@ -159,3 +160,4 @@ post_dfB <- filter(post_df1, Pup_ID == levels(Pup_ID)[1])
 plot_grid(gg_posterior %+% post_dfB)
 #I think this also looks okay
 
+## JD: Sorry it took me so long to get to this! I cannot get the stan stuff to run, with a weird error. I guess it might be something to do with versions. I am just going to mark it “complete” for now.
