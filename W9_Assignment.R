@@ -73,9 +73,17 @@ my_priors <- c(set_prior("normal(5, 2)", "Intercept"),
               set_prior("student_t(4, 0, 2)", "sd"),
               set_prior("student_t(5, 0, 2)", "sigma")
 )
-#I am setting the intercept a prior mean of 5 and SD of 2 because pups are very small at Age = 2, and there isn't much variation
-#I set the prior for "b" to have a mean of 1 and SD of 1 because we can expect pups to increase in mass
-#I am also constraining the random effects SDs and residual standard deviation 
+##I am setting the intercept a prior mean of 5 and SD of 2 because pups are very small at Age = 2, and there isn't much variation
+##I set the prior for "b" to have a mean of 1 and SD of 1 because we can expect pups to increase in mass
+##I am also constraining the random effects SDs and residual standard deviation
+
+## BMB: as you can see from the tests, allowing a SD of 1 on the slope prior allows for some quite large negative values -- probably
+## make the slope SD smaller.
+## In practice this won't matter much because the data are very informative, so the prior gets overwhelmed.
+## Fitting mass on the log scale would prevent the masses from going negative even if the slope was negative (i.e., mass would
+## decline exponentially toward zero)
+set.seed(101); range(rnorm(500, mean = 1, sd = 1))
+
 
 #This calls the function created above, applying my set priors
 test_prior(my_priors) 
@@ -89,12 +97,15 @@ model_b <- brm(m_weight, numeric_weight, prior = my_priors,
              control = list(adapt_delta = 0.99)
 )
 #I'm getting warning messages that the Random variable is 0 but must be positive, so I know something's wrong, but I don't know how to fix it
+## BMB: Hmm, I don't get those warnings
 
 #Trying with the default priors
 default_b <- brm(m_weight, numeric_weight,
                   seed = 101
 )
 #Same warning messages, plus 5 of 4000 transitions ended with a divergence
+## BMB: the divergences would need to be dealt with, so that's an extra bonus on the tighter priors you specified
+## (keeps the chains from going to bad places)
 
 #Diagnoses
 print(diagnostic_posterior(model_b),
@@ -102,12 +113,14 @@ print(diagnostic_posterior(model_b),
 #The convergence diagnostic, Rhat (i.e. how much more the chains could overlap if ran forever), is less than the threshold of 1.01. 
 #The effective sample size, ESS (i.e. the independent pieces of information), is greater than 400
 #The Monte Carlo standard error, MSCE (i.e. how much noise there is in the estimate of the mean), are quite small
+## BMB: OK
 
 #Diagnoses with rank histograms
 mcmc_rank_overlay(model_b, regex_pars= "b_|sd_")
 #The horizontal lines represent the posterior rank of the parameters
 #We want the lines to be evenly spread for all chains
 #There are a few spots where the lines aren't quite evenly spread, but from my understanding, the divergence isn't too big to worry about
+## BMB: OK
 
 #Results
 summary(model_b)
@@ -143,10 +156,13 @@ ggplot(res, aes(estimate, term, colour = model, shape = model)) +
   guides(colour = guide_legend(reverse=TRUE),
          shape = guide_legend(reverse=TRUE))
 #The lmer model and the two brms models (one with default prior and the other with my set priors) look pretty similar
-#The brms_model value for the correlation between Intercept and Age is positive, while it is negative for the other two. However, the CIs are wide and cover much of the same range, so we can't be very certain that they are truly different
+##The brms_model value for the correlation between Intercept and Age is positive, while it is negative for the other two. However, the CIs are wide and cover much of the same range, so we can't be very certain that they are truly different
+## BMB: Agreed. This is barely any difference. All we can tell is that the correlation isn't very large (say, corr > -0.5 and corr < 0.5)
+## (To be more careful we should probably center Age, although I doubt the intercept-slope correlation is of great scientific interest ...)
+
 
 #Posterior predictive simulations to compare to my data
-post_df <- numeric_weight |> add_predicted_draws(model_b)
+post_df1 <- numeric_weight |> add_predicted_draws(model_b)
 gg_posterior <- ggplot(post_df1,
               aes(Age, .prediction, group=interaction(Pup_ID,.draw))) +
   rasterise(geom_line(alpha = 0.1)) +
@@ -160,4 +176,8 @@ post_dfB <- filter(post_df1, Pup_ID == levels(Pup_ID)[1])
 plot_grid(gg_posterior %+% post_dfB)
 #I think this also looks okay
 
+## BMB: I agree.
+
 ## JD: Sorry it took me so long to get to this! I cannot get the stan stuff to run, with a weird error. I guess it might be something to do with versions. I am just going to mark it “complete” for now.
+
+## BMB: mark 2.1
